@@ -14,7 +14,7 @@ var options = {
 	}
 }
 function Logger(options){
-	var defaultDestination = {type:"console"};
+	var defaultDestination = {type:"remote", address:"http://localhost:80/"};
 	var defaultGroup = "people";
 	var defaultEnvironment = "dev";
 	this.destination = options ? options.destination ? options.destination : defaultDestination : defaultDestination;
@@ -26,20 +26,25 @@ function Logger(options){
 	this.log = logger.log;
 }
 
-/**
-
-var options = {
-	group: string,
-	from: date,
-	to: date,
-	severity: number,
-	source: string,
-}
-
-*/
 
 function getLogs(options){
-	var logs = this.store.filter(function(log){
+	var logs;
+	if(options && options.destination && options.destination.type && options.destination.type === "file"){
+		var fs = require("fs");
+		try{
+			logs = fs.readFileSync(options.destination.address).toString().split('\n');
+			logs = logs.slice(0, logs.length - 1);
+			logs = logs.map(function(log){
+				return JSON.parse(log);
+			})
+		} catch (e){
+			console.log(e);
+			return false;
+		}
+	} else {
+		logs = this.store;
+	}
+	logs = logs.filter(function(log){
 		if(options && options.group){
 			if(log.group === options.group){
 				return true;
@@ -91,4 +96,4 @@ var logger = new Logger();
 logger.log("helllo",{group:"emeka"});
 logger.log("hiiii");
 logger.log("emeka!!");
-console.log(logger.getLogs({group:"emeka"}));
+console.log(logger.getLogs({group:"emeka", destination:{type:"file", address:"errors.log"}}));
