@@ -1,6 +1,9 @@
 
 var logger = require("./lib/logger");
 
+/**
+Creates a new logger object
+@params options - object
 var options = {
 	destination:{type:"file", address:"errors.log"},
 	group:"basics",
@@ -13,9 +16,10 @@ var options = {
 		"5":[]
 	}
 }
+*/
 function Logger(options){
-	var defaultDestination = {type:"remote", address:"http://localhost:80/"};
-	var defaultGroup = "people";
+	var defaultDestination = {type:"console"};
+	var defaultGroup = "general";
 	var defaultEnvironment = "dev";
 	this.destination = options ? options.destination ? options.destination : defaultDestination : defaultDestination;
 	this.group = options ? options.group ? options.group : defaultGroup : defaultGroup;
@@ -92,8 +96,4 @@ function getLogs(options){
 	return logs;
 }
 
-var logger = new Logger();
-logger.log("helllo",{group:"emeka"});
-logger.log("hiiii");
-logger.log("emeka!!");
-console.log(logger.getLogs({group:"emeka", destination:{type:"file", address:"errors.log"}}));
+module.exports = Logger;

@@ -1,7 +1,7 @@
 {
   "name": "loggerhead",
   "version": "1.0.0",
-  "description": "A message logging library for both client-side and server-side JavaScript",
+  "description": "A message logging library for server-side JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "jest"
