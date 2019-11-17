@@ -18,7 +18,7 @@ var options = {
 }
 */
 function Logger(options){
-	var defaultDestination = {type:"console"};
+	var defaultDestination = {type:"file", address:"errors.log"};
 	var defaultGroup = "general";
 	var defaultEnvironment = "dev";
 	this.destination = options ? options.destination ? options.destination : defaultDestination : defaultDestination;
@@ -33,6 +33,32 @@ function Logger(options){
 
 function getLogs(options){
 	var logs;
+	if(options && typeof(options) === "number"){
+		logs = this.store;
+		logs = logs.filter(function(log){
+			if(options && options.severity){
+				if(log.severity === options.severity){
+					return true;
+				}
+				return false;
+			}
+			return true;
+		});
+		return logs;
+	} else if(options && typeof(options) === "string"){
+		logs = this.store;
+		logs = logs.filter(function(log){
+			if(options && options.group){
+				if(log.group === options.group){
+					return true;
+				}
+				return false;
+			}
+			return true;
+		})
+		return logs;
+	}
+	
 	if(options && options.destination && options.destination.type && options.destination.type === "file"){
 		var fs = require("fs");
 		try{
