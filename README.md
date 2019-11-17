@@ -121,3 +121,13 @@ The getLogs method can take no argument wherein in uses the object instantiation
 	fileLogger.getLogs(2);
 	fileLogger.getLogs(retrievalOptions)
 ```
+
+## Contributing
+In case you have any ideas, features you would like to be included or any bug fixes, you can send a PR.
+
+(Requires Node v6 or above)
+- Clone the repo
+
+```bash
+git clone https://github.com/ChukwuEmekaAjah/logpersist.git
+```

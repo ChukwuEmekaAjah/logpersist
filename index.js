@@ -1,22 +1,6 @@
 
 var logger = require("./lib/logger");
 
-/**
-Creates a new logger object
-@params options - object
-var options = {
-	destination:{type:"file", address:"errors.log"},
-	group:"basics",
-	environment: "dev",
-	notifications : {
-		"1":[],
-		"2":[],
-		"3":[],
-		"4":[],
-		"5":[]
-	}
-}
-*/
 function Logger(options){
 	var defaultDestination = {type:"file", address:"errors.log"};
 	var defaultGroup = "general";
@@ -36,25 +20,19 @@ function getLogs(options){
 	if(options && typeof(options) === "number"){
 		logs = this.store;
 		logs = logs.filter(function(log){
-			if(options && options.severity){
-				if(log.severity === options.severity){
-					return true;
-				}
-				return false;
+			if(log.severity === options){
+				return true;
 			}
-			return true;
+			return false;
 		});
 		return logs;
 	} else if(options && typeof(options) === "string"){
 		logs = this.store;
 		logs = logs.filter(function(log){
-			if(options && options.group){
-				if(log.group === options.group){
-					return true;
-				}
-				return false;
+			if(log.group === options){
+				return true;
 			}
-			return true;
+			return false;
 		})
 		return logs;
 	}
@@ -121,5 +99,7 @@ function getLogs(options){
 	})
 	return logs;
 }
+
+
 
 module.exports = Logger;
