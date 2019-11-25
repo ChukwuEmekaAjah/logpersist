@@ -1,6 +1,6 @@
 {
   "name": "logpersist",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A message logging library for server-side JavaScript",
   "main": "index.js",
   "scripts": {

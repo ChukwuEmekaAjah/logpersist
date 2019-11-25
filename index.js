@@ -9,6 +9,7 @@ function Logger(options){
 	this.group = options ? options.group ? options.group : defaultGroup : defaultGroup;
 	this.environment = options ? options.environment ? options.environment : defaultEnvironment : defaultEnvironment;
 	this.notifications = options ? options.notifications ? options.notifications : {} : {};
+	this.notificationService = options ? options.notificationService ? options.notificationService : null : null;
 	this.store = [];
 	this.getLogs = getLogs;
 	this.log = logger.log;
@@ -99,7 +100,6 @@ function getLogs(options){
 	})
 	return logs;
 }
-
 
 
 module.exports = Logger;

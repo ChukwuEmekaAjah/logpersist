@@ -12,3 +12,15 @@
 {"id":"16e79faae5f","message":"What is happening here?","time":1574004502111,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
 {"id":"16e79facd70","message":"Hello world","time":1574004510065,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
 {"id":"16e79facd77","message":"What is happening here?","time":1574004510071,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8ddfae1c","message":"hello world","time":1574338276892,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de0a168","message":"hello world","time":1574338339176,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de13dd0","message":"hello world","time":1574338379216,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de1e0b4","message":"hello world","time":1574338420916,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de21e4e","message":"hello world","time":1574338436686,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de28390","message":"hello world","time":1574338462608,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de2d3b2","message":"hello world","time":1574338483122,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de34f8f","message":"hello world","time":1574338514831,"severity":1,"name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de46e93","message":"hello world","time":1574338588307,"severity":"2","name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de4d3ac","message":"hello world","time":1574338614188,"severity":"2","name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de4fe45","message":"hello world","time":1574338625093,"severity":"2","name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
+{"id":"16e8de591bc","message":"hello world","time":1574338662844,"severity":"2","name":"Status Check","group":"general","trace":"Breakpoint message","source":"index.js"}
